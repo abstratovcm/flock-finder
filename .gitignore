@@ -1,0 +1,8 @@
+/target/
+*.class
+*.log
+*.jar
+*.war
+*.ear
+/WebContent/WEB-INF/lib/
+.idea/
