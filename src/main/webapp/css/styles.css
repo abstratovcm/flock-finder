@@ -158,6 +158,48 @@ display: flex;
     font-size: 1.5em;
   }
 
+  .title::before {
+      width: 85%;
+  }
+
+  table {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .homepage-options {
+    flex-direction: column;
+  }
+
+  .option {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], input[type="number"], input[type="password"] {
+    font-size: 16px;
+  }
+
+  input[type="submit"], .dashboard-link {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 1.2em;
+  }
+
+  .title::before {
+      width: 85%;
+  }
+
   table {
     overflow-x: auto;
     white-space: nowrap;
