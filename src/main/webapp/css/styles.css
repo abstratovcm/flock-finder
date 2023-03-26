@@ -193,11 +193,11 @@ display: flex;
   }
 
   h1, h2 {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .title::before {
-      width: 85%;
+      width: 95%;
   }
 
   table {
