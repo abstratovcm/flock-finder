@@ -4,12 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-image: url('https://source.unsplash.com/random?farm');
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-image: url('https://source.unsplash.com/random?farm');
+  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -30,10 +34,10 @@ h1::before, h2::before {
   transform: translateX(-50%);
   height: 100%;
   width: 70%;
-  background-image: url('https://source.unsplash.com/random?wheat');
+  background-color: rgba(255, 255, 255, 0.7);
   background-size: cover;
-  opacity: 0.6;
   z-index: -1;
+  border-radius: 5px;
 }
 
 form {
