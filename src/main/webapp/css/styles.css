@@ -4,21 +4,52 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-image: url('https://source.unsplash.com/random?farm');
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 h1, h2 {
-  color: #333;
+  color: #184d47;
   margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+h1::before, h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-size: cover;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.title::before {
+    width: 70%;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
 }
 
 label {
@@ -32,7 +63,7 @@ input[type="text"], input[type="number"] {
 }
 
 input[type="submit"] {
-  background-color: #3498db;
+  background-color: #184d47;
   color: white;
   padding: 10px;
   border: none;
@@ -45,6 +76,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 
 th, td {
@@ -54,14 +87,98 @@ th, td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #d9ead3;
   font-weight: 500;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #d9ead3;
 }
 
 tr:hover {
-  background-color: #ddd;
+  background-color: #b6d7a8;
+}
+
+.homepage-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.option {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
+}
+
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.dashboard-link {
+  /*display: inline-block;*/
+  background-color: #184d47;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.dashboard-link:hover {
+  background-color: #149c85;
+}
+
+#dashboard-area {
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#dashboard-area h2 {
+  margin-top: 0;
+  width: 85%;
+}
+#dashboard-area a {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  table {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .homepage-options {
+    flex-direction: column;
+  }
+
+  .option {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"], input[type="number"], input[type="password"] {
+    font-size: 16px;
+  }
+
+  input[type="submit"], .dashboard-link {
+    font-size: 16px;
+    padding: 8px;
+  }
 }

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm Management System</title>
-    <link rel="stylesheet" href="css/styles3.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Farm Management System</h1>
+    <h1 class="title">Farm Management System</h1>
     <div class="homepage-options">
         <div class="option">
             <h2>Login</h2>
@@ -20,9 +20,10 @@
                 <input type="submit" value="Login">
             </form>
         </div>
-        <div class="option">
-            <h2>Access Cattle Weight Dashboard</h2>
-            <a href="dashboard.jsp" class="dashboard-link">Go to Cattle Weight Dashboard</a>
+        <div class="option" id="dashboard-area">
+             <h2 class="top">Access Dashboard</h2>
+              <a href="dashboard.jsp" class="dashboard-link">Go to Cattle Weight Dashboard</a>
+
         </div>
     </div>
 </body>

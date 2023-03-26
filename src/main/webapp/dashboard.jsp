@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cattle Weight Dashboard</title>
-    <link rel="stylesheet" href="css/styles3.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Cattle Weight Dashboard</h1>
+    <h1 class="title">Cattle Weight Dashboard</h1>
 
-    <h2>Add New Cattle Weight Data</h2>
+    <h2 class="title">Add New Cattle Weight Data</h2>
     <form action="CattleWeightServlet" method="post">
         <label for="cattleId">Cattle ID:</label>
         <input type="text" id="cattleId" name="cattleId" required>

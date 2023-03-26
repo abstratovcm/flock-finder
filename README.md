@@ -16,9 +16,7 @@
 │   │       ├── dashboard.jsp
 │   │       ├── homepage.jsp
 │   │       ├── css
-│   │       │   ├── styles.css
-│   │       │   ├── styles2.css
-│   │       │   └── styles3.css
+│   │       │   └── styles.css
 │   │       ├── lib
 │   │       │   ├── jstl-1.2.jar
 │   │       │   └── sqlite-jdbc-3.41.0.1.jar
