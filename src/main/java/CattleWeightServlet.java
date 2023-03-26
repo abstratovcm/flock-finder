@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.crypto.Data;
 
 @WebServlet("/CattleWeightServlet")
 public class CattleWeightServlet extends HttpServlet implements ServletContextListener {
@@ -15,6 +16,7 @@ public class CattleWeightServlet extends HttpServlet implements ServletContextLi
     }
 
     public void contextInitialized(ServletContextEvent sce) {
+        DatabaseManager.setServletContext(sce.getServletContext());
         DatabaseManager.createTable();
     }
 
