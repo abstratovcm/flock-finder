@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- SQLite Dialect -->
+        <property name="hibernate.dialect">org.sqlite.hibernate.dialect.SQLiteDialect</property>
+        <!-- SQLite Driver -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <!-- SQLite Connection URL -->
+        <property name="hibernate.connection.url">jdbc:sqlite:${rootPath}WEB-INF/data/userList.db</property>
+        <!-- Automatically create/update database tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Show SQL queries -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- User entity mapping -->
+        <mapping class="User" />
+        <mapping class="Admin" />
+        <mapping class="LimitedUser" />
+    </session-factory>
+</hibernate-configuration>

@@ -6,12 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.ServletContext;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DatabaseManager {
-    //private static final String DATABASE_URL = "jdbc:sqlite:/home/abstrato/Documents/Personal/Repositories/flock-finder/src/main/webapp/WEB-INF/data/weights.db";
     private static String DATABASE_URL = "";
 
     public static Connection connect() throws SQLException {
@@ -24,9 +22,8 @@ public class DatabaseManager {
         return DriverManager.getConnection(DATABASE_URL);
     }
 
-    public static void setServletContext(ServletContext servletContext) {
-        String projectRootPath = servletContext.getRealPath("/");
-        Path dbPath = Paths.get(projectRootPath, "WEB-INF/data/weights.db");
+    public static void setServletContext(String rootPath) {
+        Path dbPath = Paths.get(rootPath, "WEB-INF/data/weights.db");
         DATABASE_URL = "jdbc:sqlite:" + dbPath.toString();
     }
 

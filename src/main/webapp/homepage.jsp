@@ -12,12 +12,39 @@
     <div class="homepage-options">
         <div class="option">
             <h2>Login</h2>
+            <% String loginErrorMessage = (String) request.getAttribute("loginErrorMessage"); %>
+            <% if (loginErrorMessage != null) { %>
+                <p class="error"><%= loginErrorMessage %></p>
+            <% } %>
             <form action="login" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
                 <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="option">
+            <h2>Register</h2>
+            <% String registerSuccessMessage = (String) request.getAttribute("registerSuccessMessage"); %>
+            <% if (registerSuccessMessage != null) { %>
+                <p><%= registerSuccessMessage %></p>
+            <% } %>
+            <% String registerErrorMessage = (String) request.getAttribute("registerErrorMessage"); %>
+            <% if (registerErrorMessage != null) { %>
+                <p><%= registerErrorMessage %></p>
+            <% } %>
+            <form action="register" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="role">Role:</label>
+                <select id="role" name="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <input type="submit" value="Register">
             </form>
         </div>
         <div class="option" id="dashboard-area">

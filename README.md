@@ -9,24 +9,32 @@
 ├── src
 │   ├── main
 │   │   ├── java
+│   │   │   ├── Admin.java
 │   │   │   ├── CattleWeight.java
 │   │   │   ├── CattleWeightServlet.java
-│   │   │   └── DatabaseManager.java
+│   │   │   ├── ContextInitializerServlet.java
+│   │   │   ├── DatabaseManager.java
+│   │   │   ├── LimitedUser.java
+│   │   │   ├── LoginServlet.java
+│   │   │   ├── RegisterServlet.java
+│   │   │   ├── User.java
+│   │   │   └── UserRepository.java
+│   │   ├── resources
+│   │   │   └── hibernate.cfg.xml
 │   │   └── webapp
 │   │       ├── dashboard.jsp
 │   │       ├── homepage.jsp
 │   │       ├── css
 │   │       │   └── styles.css
-│   │       ├── lib
-│   │       │   ├── jstl-1.2.jar
-│   │       │   └── sqlite-jdbc-3.41.0.1.jar
 │   │       └── WEB-INF
 │   │           ├── web.xml
 │   │           └── data
+│   │               ├── userList.db
 │   │               └── weights.db
 ```
 
 ./deploy.sh
+
 chmod +x deploy.sh
 
 site: https://flockfinder.herokuapp.com/
