@@ -1,4 +1,5 @@
-import javax.persistence.*;
+import javax.persistence.Entity;
+
 @Entity
 public class LimitedUser extends User {
     protected LimitedUser() {

@@ -4,11 +4,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UserRepository userRepository = new UserRepository();
+    private final UserRepository userRepository = new UserRepositoryImpl();
 
     public RegisterServlet() {
         super();
@@ -19,14 +20,15 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        if (userRepository.getUser(username) == null) {
+        Optional<User> user = userRepository.findById(username);
+        if (user.isEmpty()) {
             User newUser;
             if ("admin".equals(role)) {
                 newUser = new Admin(username, password);
             } else {
                 newUser = new LimitedUser(username, password);
             }
-            userRepository.addUser(newUser);
+            userRepository.save(newUser);
             request.setAttribute("registerSuccessMessage", "User registered successfully. Please log in.");
             request.getRequestDispatcher("homepage.jsp").forward(request, response);
         } else {
