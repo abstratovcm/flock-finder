@@ -1,5 +1,5 @@
 public class CattleWeight {
-    private int id;
+    private final int id;
     private String cattleId;
     private double weight;
 

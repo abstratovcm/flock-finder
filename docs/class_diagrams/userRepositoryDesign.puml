@@ -1,0 +1,30 @@
+@startuml
+
+interface "GenericRepository<T, ID>" as GenericRepository {
+}
+
+abstract class "BaseRepository<T, ID>" as BaseRepository {
+}
+BaseRepository .up.> GenericRepository : implements
+
+class "UserRepositoryImpl<User, String>" as UserRepositoryImpl {
+}
+UserRepositoryImpl -up-|> BaseRepository : extends
+UserRepositoryImpl .up.> UserRepository : implements
+
+interface "UserRepository<User, String>" as UserRepository {
+}
+UserRepository .up.> GenericRepository : extends
+
+abstract class "User" as User {
+}
+
+class "LimitedUser" as LimitedUser {
+}
+LimitedUser -up-|> User : extends
+
+class "Admin" as Admin {
+}
+Admin -up-|> User : extends
+
+@enduml
